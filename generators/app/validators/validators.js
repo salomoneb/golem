@@ -1,7 +1,3 @@
-/**
- *  Prompt question validation
- */
-
 const validators = {
   validateComponentName(input) {
     if (typeof input !== "string" || input.trim() === "") {
