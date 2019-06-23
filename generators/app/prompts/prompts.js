@@ -1,6 +1,6 @@
 const path = require("path")
 const validatorsPath = path.resolve(__dirname, "..", "validators/validators.js")
-const { validateComponentName } = require(validatorsPath)
+const { inputExists } = require(validatorsPath)
 
 const prompts = {
   componentNamePrompt: {
@@ -8,7 +8,7 @@ const prompts = {
     name: "name",
     message: "What's the name of your component?",
     validate(input) {
-      return validateComponentName(input)
+      return inputExists(input)
     }
   }
 }

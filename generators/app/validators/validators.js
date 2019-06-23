@@ -1,6 +1,6 @@
 const validators = {
-  validateComponentName(input) {
-    if (typeof input !== "string" || input.trim() === "") {
+  inputExists(input) {
+    if (!input.trim()) {
       return "Please provide a component name"
     }
     return true
