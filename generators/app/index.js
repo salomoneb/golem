@@ -10,12 +10,10 @@ module.exports = class extends Generator {
 
   async prompting() {
     this.answers = await this.prompt([componentNamePrompt])
-    this.log("this is my component name", this.answers.name)
   }
 
   paths() {
     this.destinationRoot(this.answers.name)
-    this.log(this.destinationRoot())
   }
 
   writing() {
