@@ -9,9 +9,21 @@ module.exports = class extends Generator {
   }
 
   async prompting() {
-    const prompt = await this.prompt([componentNamePrompt])
-    this.log("this is my component name", prompt.name)
+    this.answers = await this.prompt([componentNamePrompt])
+    this.log("this is my component name", this.answers.name)
+  }
+
+  paths() {
+    this.destinationRoot(this.answers.name)
     this.log(this.destinationRoot())
+  }
+
+  writing() {
+    this.fs.copyTpl(
+      this.templatePath("**/*"),
+      this.destinationPath(),
+      this.answers
+    )
   }
 }
 
