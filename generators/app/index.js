@@ -9,7 +9,10 @@ module.exports = class extends Generator {
   }
 
   async prompting() {
-    this.answers = await this.prompt([namePrompt, descriptionPrompt])
+    this.answers = await this.prompt([
+      namePrompt,
+      descriptionPrompt
+    ])
   }
 
   paths() {
