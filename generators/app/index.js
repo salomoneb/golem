@@ -5,7 +5,7 @@ const { namePrompt, descriptionPrompt } = require(promptPath)
 
 module.exports = class extends Generator {
   constructor(args, opts) {
-    super(args, opts);
+    super(args, opts)
   }
 
   async prompting() {
