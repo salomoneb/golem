@@ -1,7 +1,7 @@
 const Generator = require('yeoman-generator')
 const path = require("path")
 const promptPath = path.resolve(__dirname, "prompts/prompts.js")
-const { componentNamePrompt } = require(promptPath)
+const { namePrompt, descriptionPrompt } = require(promptPath)
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -9,11 +9,11 @@ module.exports = class extends Generator {
   }
 
   async prompting() {
-    this.answers = await this.prompt([componentNamePrompt])
+    this.answers = await this.prompt([namePrompt, descriptionPrompt])
   }
 
   paths() {
-    this.destinationRoot(this.answers.name)
+    this.destinationRoot(this.answers.componentName)
   }
 
   writing() {
